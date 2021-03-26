@@ -1,0 +1,86 @@
+module.exports = {
+    parser: 'babel-eslint',
+    extends: [
+        'standard',
+    ],
+    env: {
+        'shared-node-browser': true,
+        es6: true,
+    },
+    globals: {
+        fetch: true,
+        Promise: true,
+    },
+    rules: {
+        'import/no-extraneous-dependencies': 0,
+        'import/no-unresolved': 0,
+        'import/extensions': 0,
+        'no-console': 1,
+        'no-empty': 0,
+        'no-const-assign': 'error',
+        'no-var': 2,
+        'no-extra-semi': 2,
+        semi: [2, 'always'],
+        'keyword-spacing': 2,
+        'comma-dangle': ['error', {
+            arrays: 'always-multiline',
+            objects: 'always-multiline',
+            imports: 'always-multiline',
+            exports: 'always-multiline',
+            functions: 'always-multiline',
+        }],
+        'prefer-const': ['error', {
+            destructuring: 'any',
+            ignoreReadBeforeAssign: true,
+        }],
+        'quote-props': ['error', 'as-needed', { keywords: false, unnecessary: true, numbers: false }],
+        'arrow-body-style': ['error', 'as-needed', {
+            requireReturnForObjectLiteral: false,
+        }],
+        'arrow-parens': ['error', 'always', {
+            requireForBlockBody: true,
+        }],
+        'arrow-spacing': ['error', { before: true, after: true }],
+        'prefer-arrow-callback': ['error', {
+            allowNamedFunctions: false,
+            allowUnboundThis: true,
+        }],
+        indent: ['error', 4, {
+            SwitchCase: 1,
+            VariableDeclarator: 1,
+            outerIIFEBody: 1,
+            MemberExpression: 1,
+            FunctionDeclaration: { parameters: 1, body: 1 },
+            FunctionExpression: { parameters: 1, body: 1 },
+            CallExpression: { arguments: 1 },
+            ArrayExpression: 1,
+            ObjectExpression: 1,
+            ImportDeclaration: 1,
+            flatTernaryExpressions: false,
+            ignoreComments: false,
+        }],
+        'object-curly-spacing': ['error', 'always'],
+        'require-jsdoc': [1, {
+            require: {
+                FunctionDeclaration: true,
+                MethodDefinition: true,
+                ClassDeclaration: false,
+                ArrowFunctionExpression: true,
+            },
+        }],
+        'valid-jsdoc': [1, {
+            prefer: {
+                arg: 'param',
+                argument: 'param',
+                return: 'returns',
+            },
+            requireParamDescription: false,
+            requireReturnDescription: false,
+            requireReturnType: true,
+            requireReturn: true,
+        }],
+        'max-len': [1, { code: 120, ignoreComments: true }],
+        'template-tag-spacing': ['error', 'never'],
+        'object-shorthand': ['error', 'always'],
+    },
+};

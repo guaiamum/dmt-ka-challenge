@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "./config/eslint/standard.config.js",
+    "./config/eslint/preact.config.js"
+  ]
+}
