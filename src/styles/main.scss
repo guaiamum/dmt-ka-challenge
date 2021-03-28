@@ -6,7 +6,7 @@
 @import "normalize";
 
 // Components
-@import "components/slider";
+@import "Components/Slider/styles.scss";
 
 body {
     font-family: "Playfair Display", serif;
@@ -41,6 +41,7 @@ main {
     grid-auto-columns: 70% auto;
     gap: $spacing-small $spacing-medium;
     @media screen and (max-width: 768px) {
+        grid-auto-columns: auto;
         grid-template-areas:
             "hero"
             "post";
@@ -65,12 +66,7 @@ main {
     .post {
         grid-area: post;
 
-        // display: flex;
-        // // slider has priority in size
-        // & *:first-child {
-        //     flex: auto 1 0;
-        // }
-        & *:first-child {
+        & > *:first-child {
             float: left;
         }
     }

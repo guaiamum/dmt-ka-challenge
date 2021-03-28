@@ -9,21 +9,23 @@
     border-radius: 50%;
 }
 
-// slider wrapper
-.slider-w {
-    display: flex;
-    // for dev:
-    width: 300px;
-
-    // SCROLLING BASE DEFS
+%scroll-base-defs {
     overflow-x: scroll;
-    /* Hide scrollbar for Chrome, Safari and Opera */
+    // Hide scrollbar for Chrome, Safari and Opera
     &::-webkit-scrollbar {
         display: none;
     }
-    /* Hide scrollbar for IE, Edge and Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    // Hide scrollbar for IE, Edge and Firefox
+    -ms-overflow-style: none; // IE and Edge
+    scrollbar-width: none; // Firefox
+}
+
+// slider wrapper
+.slider-w {
+    display: flex;
+
+    // SCROLLING BASE DEFS
+    @extend %scroll-base-defs;
 
     // NOW TO THE SCROLLING SNAP
     scroll-snap-type: x mandatory;
@@ -32,14 +34,27 @@
     & > .item-w {
         scroll-snap-align: start;
         position: relative;
+        margin-inline-end: $spacing-small;
     }
 
+    // item image skeleton
+    .item-skt {
+        background-color: $gray-500;
+    }
+
+    // item button shows when wrapper is hovered
+    &:hover .item-btn {
+        opacity: 1;
+    }
     // item button
     .item-btn {
+        opacity: 0;
+        transition: opacity 500ms;
+        cursor: pointer;
+
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 0;
 
         &._prev {
             left: 0;

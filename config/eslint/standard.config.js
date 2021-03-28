@@ -10,6 +10,7 @@ module.exports = {
     globals: {
         fetch: true,
         Promise: true,
+        IntersectionObserver: true,
     },
     rules: {
         'import/no-extraneous-dependencies': 0,

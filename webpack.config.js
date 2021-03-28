@@ -81,6 +81,12 @@ export default (env, { mode }) => ({
             },
         ],
     },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+        ],
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebPackPlugin({
@@ -90,6 +96,5 @@ export default (env, { mode }) => ({
         new MiniCssExtractPlugin({
             filename: './style.[contenthash:8].css',
         }),
-        // new CssMinimizerPlugin({ sourceMap: mode !== 'development' }),
     ],
 });
