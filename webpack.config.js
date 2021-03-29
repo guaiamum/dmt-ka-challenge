@@ -57,27 +57,8 @@ export default (env, { mode }) => ({
                 ],
             },
             {
-                test: /\.svg$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[contenthash:8].[ext]',
-                            outputPath: './icons/',
-                        },
-                    },
-                ],
-            },
-            {
                 test: /\.ico$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                        },
-                    },
-                ],
+                type: 'asset/resource'
             },
         ],
     },

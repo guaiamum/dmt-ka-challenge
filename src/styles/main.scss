@@ -7,11 +7,13 @@
 
 // Components
 @import "Components/Slider/styles.scss";
+@import "Components/Navigation/styles.scss";
 
 body {
     font-family: "Playfair Display", serif;
-    background-color: $gray-800;
-    color: white;
+    // background-color: $gray-800;
+    // color: white;
+    color: $gray-800;
 }
 
 #root {
@@ -70,26 +72,6 @@ main {
             float: left;
         }
     }
-
-    nav {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-
-        @media screen and (max-width: 768px) {
-            display: none;
-        }
-
-        border-left: 2px solid $gray-700;
-
-        a {
-            color: white;
-        }
-    }
-}
-
-aside {
-    grid-area: aside;
 }
 
 footer {

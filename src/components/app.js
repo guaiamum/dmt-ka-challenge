@@ -1,10 +1,13 @@
 import { h, Fragment } from 'preact';
 import Slider from 'Components/Slider';
 import longText from '../assets/long-text.js';
+import Navigation from './Navigation/index.js';
 
 const imagesArray = Array(5)
     .fill('https://picsum.photos/300/150')
     .map((imgSrc, idx) => ({ desc: 'an image description', src: `${imgSrc}?idx=${idx}` }));
+
+const linksArray = Array(6).fill(null).map(() => ({ url: "", text: 'Post Link' }))
 
 /**
  * Renders the App
@@ -26,12 +29,7 @@ export default function App({ images = imagesArray }) {
                     />
                     <p>{longText}</p>
                 </section>
-                <nav>
-                    Aside Header
-                    {
-                        Array(6).fill(null).map(() => (<a href="">Post Link</a>))
-                    }
-                </nav>
+                <Navigation links={linksArray} />
             </main>
             <footer>Footer</footer>
         </Fragment>

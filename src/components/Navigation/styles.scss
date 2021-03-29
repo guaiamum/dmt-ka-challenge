@@ -1,0 +1,65 @@
+$nav-border-width: 2px;
+$nav-width-content: 200px;
+// content + padding horizontal + border
+$nav-width: $nav-width-content + ($spacing-medium * 2) + $nav-border-width;
+
+.nav-tog {
+    position: absolute;
+    top: 0;
+    right: $spacing-medium;
+    cursor: pointer;
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAK0lEQVRYw+3TQQ0AAAgDsfk3DR4IDxLaCdjrEoBramkO5gegZCWD0JQMfNZHz65gLSCfwQAAAABJRU5ErkJggg==")
+            no-repeat;
+        background-size: 36px;
+        background-position: center 10px;
+    }
+}
+
+#toggle-nav:checked + .nav {
+    right: 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    //mechanics
+    height: 100%;
+    margin: 0;
+    width: $nav-width-content;
+
+    @media screen and (max-width: 768px) {
+        position: fixed;
+        right: -$nav-width;
+        transition: right 0.2s;
+        top: 0;
+        bottom: 0;
+        justify-content: center;
+
+        background-color: white;
+
+        // @comment: instead of important, double the class
+        & + .nav-tog.nav-tog {
+            display: block;
+        }
+    }
+    & + .nav-tog {
+        display: none;
+    }
+
+    // visual
+    border-left: $nav-border-width solid $gray-700;
+    padding: 0 $spacing-medium;
+
+    .nav-item {
+        a {
+            color: $gray-700;
+        }
+    }
+}
