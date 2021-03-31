@@ -12,6 +12,7 @@ module.exports = {
         Promise: true,
         IntersectionObserver: true,
     },
+    plugins: ['jest'],
     rules: {
         'import/no-extraneous-dependencies': 0,
         'import/no-unresolved': 0,

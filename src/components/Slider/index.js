@@ -9,8 +9,8 @@ const ONE_PIXEL_TRANSPARENT = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAE
  * @param {Object} options
  * @returns {Function}
  */
-const scrollByItemsWidthFactory = ({ invertX = false, sliderRef } = {}) => () => {
-    const left = 300 * (invertX ? -1 : 1);
+const scrollByItemsWidthFactory = ({ invertX = false, sliderRef, width } = {}) => () => {
+    const left = width * (invertX ? -1 : 1);
 
     // smooth not supported in safari
     sliderRef.current.scrollBy({
@@ -50,7 +50,7 @@ export default ({ images, width = 300, height = 150, loadFirst = 1 }) => {
                                 <button
                                     type="button"
                                     class="item-btn _prev"
-                                    onClick={scrollByItemsWidthFactory({ invertX: true, sliderRef })}
+                                    onClick={scrollByItemsWidthFactory({ invertX: true, sliderRef, width })}
                                     aria-label="Previous Image" />
                             }
                             <img
@@ -65,7 +65,7 @@ export default ({ images, width = 300, height = 150, loadFirst = 1 }) => {
                                 <button
                                     type="button"
                                     class="item-btn _next"
-                                    onClick={scrollByItemsWidthFactory({ sliderRef })}
+                                    onClick={scrollByItemsWidthFactory({ sliderRef, width })}
                                     aria-label="Next Image" />
                             }
                         </article>
