@@ -1,0 +1,9 @@
+{
+    "name": "guaiamum-dmt-ka-slider",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "peerDependencies": {
+        "preact": "^10.5.13"
+    }
+}

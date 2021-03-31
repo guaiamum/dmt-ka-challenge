@@ -4168,6 +4168,11 @@ growly@^1.3.0:
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
+guaiamum-dmt-ka-slider@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/guaiamum-dmt-ka-slider/-/guaiamum-dmt-ka-slider-1.0.0.tgz#7241bf02eec7276e711774aca814701fcf23f302"
+  integrity sha512-lriOhId5SCFd0j0VVYQrOwS6ttO+MUlEBwtD14EObpzM9BPt4AR6xTnlrHCQjBM9+cXoNMls4Jaq/R8I4y40Bw==
+
 handle-thing@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-2.0.1.tgz#857f79ce359580c340d43081cc648970d0bb234e"

@@ -32,7 +32,7 @@ export default (env, { mode }) => ({
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: /node_modules\/(?!guaiamum-dmt-ka-slider)/,
                 use: [
                     { loader: 'babel-loader' },
                 ],

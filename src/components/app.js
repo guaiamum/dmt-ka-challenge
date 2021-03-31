@@ -1,5 +1,5 @@
 import { h, Fragment } from 'preact';
-import Slider from 'Components/Slider';
+import Slider from 'guaiamum-dmt-ka-slider';
 import longText from '../assets/long-text.js';
 import Navigation from './Navigation/index.js';
 
